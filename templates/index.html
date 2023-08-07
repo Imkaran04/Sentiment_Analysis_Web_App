@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #5b8ba94e;
+            padding: 30px;
+        }
+        textarea {
+            width: 70%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        button {
+            display: block;
+            width: 150px;
+            height: 40px;
+            margin: 20px auto;
+            font-size: 18px;
+            color: #fcfbfb;
+            background-color: #0b65c6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            color: #c9e0fa;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form action="/predict" method="POST">
+        <textarea name="text" placeholder="Enter text..."></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if prediction_text %}
+    <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
